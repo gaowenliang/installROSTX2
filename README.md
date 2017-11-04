@@ -1,7 +1,50 @@
 # installROSTX2
 Install Robot Operating System (ROS) on NVIDIA Jetson TX2
 
-These scripts will install Robot Operating System (ROS) on the NVIDIA Jetson TX2 development kit.
+Right now, follow http://wiki.ros.org/Installation/Ubuntu is able to install the ROS on TX2. Or follow nwxt cmd:
+
+Setup sources.lst
+
+`sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`
+
+Setup keys
+
+`sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 0xB01FA116`
+
+Installation
+
+`sudo apt-get update`
+
+`sudo apt-get install ros-kinetic-ros-desktop -y`
+
+Initialize rosdep
+
+`sudo apt-get install python-rosdep -y`
+
+`sudo rosdep init`
+
+if fail on this step, try Certificates are messed up:
+
+`sudo c_rehash /etc/ssl/certs` then do `sudo rosdep init`
+
+To find available packages, use:
+
+`rosdep update`
+
+Environment Setup
+
+`echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc`
+
+`source ~/.bashrc`
+
+Install rosinstall
+
+`sudo apt-get install python-rosinstall -y`
+
+
+ 
+
+The scripts will install Robot Operating System (ROS) on the NVIDIA Jetson TX2 development kit.
 
 Tested on L4T 27.1
 
