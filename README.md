@@ -15,7 +15,7 @@ Installation
 
 `sudo apt-get update`
 
-`sudo apt-get install ros-kinetic-ros-desktop -y`
+`sudo apt-get install ros-kinetic-desktop -y`
 
 Initialize rosdep
 
